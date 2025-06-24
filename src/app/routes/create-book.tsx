@@ -1,8 +1,7 @@
 import type { Route } from "./+types/create-book";
 import { toaster } from "@/components/ui/toaster";
-import { type CreateBookRequest, createBook } from "@/entities/book/api/createBook";
+import { type CreateBookRequest, createBook } from "@/entities/book";
 import Epub from "epubjs";
-import { useNavigate } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [

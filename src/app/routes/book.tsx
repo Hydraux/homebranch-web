@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { fetchBookById } from "@/entities/book/api/fetchBookById";
+import { fetchBookById } from "@/entities/book";
 import { HiBookOpen, HiHeart, HiPencil, HiTrash } from "react-icons/hi";
 import { Link } from "react-router";
 

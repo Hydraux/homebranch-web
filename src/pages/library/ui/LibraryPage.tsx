@@ -1,7 +1,5 @@
-import { BookCard, useBookStore } from "@/entities/book";
-import type { BookModel } from "@/entities/book/model/BookModel";
-import { Flex, For, Grid, GridItem } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { BookCard, type BookModel } from "@/entities/book";
+import { Flex, For } from "@chakra-ui/react";
 
 export function LibraryPage({books}: { books: BookModel[] }) {
   return (

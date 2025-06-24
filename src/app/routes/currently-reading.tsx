@@ -1,4 +1,4 @@
-import { fetchBookById } from "@/entities/book/api/fetchBookById";
+import { fetchBookById } from "@/entities/book";
 import type { Route } from "./+types/currently-reading";
 import { LibraryPage } from "@/pages/library";
 

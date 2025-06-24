@@ -5,7 +5,7 @@ import SubmitButton from "@/components/ui/SubmitButton";
 import { toaster } from "@/components/ui/toaster";
 import { useFetcher } from "react-router";
 
-export default function AddBookButton() {
+export function AddBookButton() {
   const fetcher = useFetcher();
 
   const _handleSubmit = async (event: ChangeEvent<HTMLInputElement>) => {

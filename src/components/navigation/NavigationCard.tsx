@@ -1,18 +1,11 @@
-import type { BookModel } from "@/entities/book/model/BookModel";
-import AddBookButton from "@/entities/book/ui/AddBookButton";
+import { AddBookButton } from "@/entities/book";
 import {
-  Box,
-  Button,
-  Card,
-  FileUpload,
-  Flex,
+  Card, Flex,
   For,
   Heading,
   Separator,
-  Tabs,
+  Tabs
 } from "@chakra-ui/react";
-import Epub from "epubjs";
-import { HiPlus, HiUpload } from "react-icons/hi";
 import { LuBookOpen } from "react-icons/lu";
 import { Link, useLocation } from "react-router";
 

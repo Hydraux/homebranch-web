@@ -1,7 +1,7 @@
 import type { Route } from "./+types/read-book";
 
 
-import { fetchBookById } from "@/entities/book/api/fetchBookById";
+import { fetchBookById } from "@/entities/book";
 import { ReactReader } from "react-reader";
 import { useMemo, useState } from "react";
 import { Box } from "@chakra-ui/react";

@@ -11,10 +11,8 @@ import type { Route } from "./+types/root";
 import { Provider } from "@/components/ui/provider";
 import { NavigationCard } from "@/components/navigation/NavigationCard";
 import { Box } from "@chakra-ui/react";
-import { Toaster, toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster"
 import { config } from "@/shared";
-import type { CreateBookRequest } from "@/entities/book/api/createBook";
-import Epub from "epubjs";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
