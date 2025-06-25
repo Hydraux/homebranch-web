@@ -6,6 +6,9 @@ export async function fetchBookById(bookId: string): Promise<BookModel> {
   try {
     const response = await fetch(`${config.backendUrl}/books/${bookId}`);
     if (!response.ok) {
+      if (response.status === 404) {
+        throw new Error(`Book with ID ${bookId} not found`);
+      }
       throw new Error('Network response was not ok');
     }
     const data: BookModel = await response.json();

@@ -1,3 +1,4 @@
+import { DeleteConfirmationDialog } from "@/components/ui/modals/DeleteConfirmationDialog";
 import type { BookModel } from "@/entities/book";
 import {
   Box,
@@ -8,7 +9,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { HiTrash, HiPencil, HiHeart, HiBookOpen } from "react-icons/hi";
+import { HiPencil, HiHeart, HiBookOpen } from "react-icons/hi";
 import { Link } from "react-router";
 
 
@@ -18,6 +19,7 @@ export interface BookDetailsPageProps {
 
 export default function BookDetailsPage({book}: BookDetailsPageProps) {
   return (
+    <>
     <Box p={4}>
       <HStack align={"start"}>
         <Box>
@@ -29,9 +31,10 @@ export default function BookDetailsPage({book}: BookDetailsPageProps) {
             w={"200px"}
           />
           <HStack mt={2} justify={"space-between"}>
-            <IconButton variant={"subtle"}>
-              <HiTrash />
-            </IconButton>
+            <DeleteConfirmationDialog
+              title={`Delete book: ${book.title}`}
+              action={`/delete-book/${book.id}`}
+            />
             <IconButton variant={"subtle"}>
               <HiPencil />
             </IconButton>
@@ -55,5 +58,6 @@ export default function BookDetailsPage({book}: BookDetailsPageProps) {
         </Box>
       </HStack>
     </Box>
+    </>
   );
 }

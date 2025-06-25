@@ -4,6 +4,7 @@ export default [
     route("books/:bookId", "routes/book.tsx"),
     route("books/:bookId/read", "routes/read-book.tsx"),
     route("create-book", "routes/create-book.tsx"),
+    route("delete-book/:id", "routes/delete-book.tsx"),
     route("currently-reading", "routes/currently-reading.tsx"),
     route("favorites", "routes/favorites.tsx"),
     index("routes/library.tsx"),
