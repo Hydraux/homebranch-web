@@ -1,5 +1,6 @@
 import { DeleteConfirmationDialog } from "@/components/ui/modals/DeleteConfirmationDialog";
 import type { BookModel } from "@/entities/book";
+import { config } from "@/shared";
 import {
   Box,
   HStack,
@@ -24,7 +25,7 @@ export default function BookDetailsPage({book}: BookDetailsPageProps) {
       <HStack align={"start"}>
         <Box>
           <Image
-            src={`${import.meta.env.VITE_BACKEND_URL}/uploads/cover-images/${
+            src={`${config.backendUrl}/uploads/cover-images/${
               book.coverImageFileName
             }`}
             alt={book.title}

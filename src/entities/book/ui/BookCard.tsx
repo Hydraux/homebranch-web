@@ -1,6 +1,7 @@
 import { Box, Card, Image, Stack, Text } from "@chakra-ui/react";
 import type { BookModel } from "../model/BookModel";
 import { Link } from "react-router";
+import { config } from "@/shared";
 
 export function BookCard({ book }: { book: BookModel }) {
   return (
@@ -9,7 +10,7 @@ export function BookCard({ book }: { book: BookModel }) {
       <Card.Root p={0}>
         <Card.Body p={0}>
           <Image
-            src={`${import.meta.env.VITE_BACKEND_URL}/uploads/cover-images/${
+            src={`${config.backendUrl}/uploads/cover-images/${
               book.coverImageFileName
             }`}
             h={"250px"}
