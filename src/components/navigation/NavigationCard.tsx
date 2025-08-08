@@ -25,11 +25,9 @@ export function NavigationCard() {
       mr={4}
       boxShadow="md"
       position={"fixed"}
-      top={4}
-      left={4}
       float={"left"}
-      height="calc(95vh)"
       width="250px"
+      height={"calc(100vh - 2rem)"}
     >
       <Flex align={"center"} justify={"center"} gap={2}>
         <LuBookOpen size={36} />

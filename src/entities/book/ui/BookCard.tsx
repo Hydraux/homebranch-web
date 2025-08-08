@@ -5,18 +5,14 @@ import { config } from "@/shared";
 
 export function BookCard({ book }: { book: BookModel }) {
   return (
-    <Stack>
+    <Stack w={"220px"}>
       <Link to={`/books/${book.id}`}>
-      <Card.Root p={0}>
-        <Card.Body p={0}>
           <Image
             src={`${config.backendUrl}/uploads/cover-images/${
               book.coverImageFileName
             }`}
             h={"250px"}
           />
-        </Card.Body>
-      </Card.Root>
       </Link>
       <Box>
         <Link to={`/books/${book.id}`}>

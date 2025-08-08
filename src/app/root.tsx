@@ -10,16 +10,11 @@ import {
 import type { Route } from "./+types/root";
 import { Provider } from "@/components/ui/provider";
 import { NavigationCard } from "@/components/navigation/NavigationCard";
-import {
-  Box,
-  Card,
-  Drawer,
-  Heading,
-  HStack,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Toaster } from "@/components/ui/toaster";
 import { config } from "@/shared";
-import { GiHamburgerMenu } from "react-icons/gi";
+
+import "@/app/styles/app.css";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -47,35 +42,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <Provider>
         <Toaster />
         <body>
-          <Box
-            visibility={{ base: "visible", md: "hidden" }}
-          >
-            <Drawer.Root placement={"start"}>
-              <Drawer.Content h={0}>
-                <NavigationCard />
-              </Drawer.Content>
-              <Drawer.Trigger w={"100%"} display={"flex"} justifyContent={"center"}>
-                <Card.Root w={"90%"} mt={4} p={2} px={4}>
-                  <HStack align={"center"} justify={"space-between"}>
-                  <GiHamburgerMenu size={24} />
-                  <Heading as={"h3"} textAlign={"center"}>HomeBranch</Heading>
-                  <GiHamburgerMenu size={24} visibility={"hidden"}/>
-                  </HStack>
-                </Card.Root>
-              </Drawer.Trigger>
-            </Drawer.Root>
+          <Box visibility={{ base: "hidden", md: "visible" }}>
+            <NavigationCard />
           </Box>
-
-          <Box p={4} h={"100vh"} display={"relative"}>
-            <Box visibility={{ base: "hidden", md: "visible" }}>
-              <NavigationCard />
-            </Box>
-            <Box p={4} pt={0} ml={{ base: 0, md: "250px" }}>
-              {children}
-            </Box>
-            <ScrollRestoration />
-            <Scripts />
+          <Box p={4} pt={0} ml={{ base: 0, md: "250px" }} height={"100%"}>
+            {children}
           </Box>
+          <ScrollRestoration />
+          <Scripts />
         </body>
       </Provider>
     </html>

@@ -63,7 +63,6 @@ export default function ReadBook({ loaderData }: Route.ComponentProps) {
           locationChanged={setLocation}
           readerStyles={readerTheme}
           swipeable={true}
-          showToc={false}
         />
       </Box>
       <CloseButton
