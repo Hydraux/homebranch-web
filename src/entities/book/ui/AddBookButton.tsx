@@ -1,11 +1,11 @@
-import { FileUpload } from "@chakra-ui/react";
+import { FileUpload, type ButtonProps } from "@chakra-ui/react";
 import { HiPlus } from "react-icons/hi";
 import { type ChangeEvent, useEffect, useRef } from "react";
 import SubmitButton from "@/components/ui/SubmitButton";
 import { toaster } from "@/components/ui/toaster";
 import { useFetcher } from "react-router";
 
-export function AddBookButton() {
+export function AddBookButton(buttonProps : ButtonProps) {
   const fetcher = useFetcher();
 
   const _handleSubmit = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -52,6 +52,7 @@ export function AddBookButton() {
           size="sm" 
           width={"100%"}
           loading={fetcher.state === "submitting"}
+          {...buttonProps}
         >
           <HiPlus /> Add Book
         </SubmitButton>

@@ -15,7 +15,7 @@ export function NavigationCard() {
     { to: "/", label: "Library" },
     { to: "/currently-reading", label: "Currently Reading" },
     { to: "/favorites", label: "Favorites" },
-    { to: "/statistics", label: "Statistics" },
+    // { to: "/statistics", label: "Statistics" }, // TODO: Implement statistics page
   ];
   return (
     <Card.Root
@@ -48,10 +48,12 @@ export function NavigationCard() {
             )}
           </For>
           <Tabs.Trigger value={"create-book"} asChild>
-            <AddBookButton />
+            <AddBookButton mt={2} />
           </Tabs.Trigger>
         </Tabs.List>
       </Tabs.Root>
+      {/* TODO: Implement settings page */}
+      {/* 
       <Separator my={4} />
       <Tabs.Root
         orientation="vertical"
@@ -63,7 +65,7 @@ export function NavigationCard() {
             <Link to={"/settings"}>Settings</Link>
           </Tabs.Trigger>
         </Tabs.List>
-      </Tabs.Root>
+      </Tabs.Root> */}
     </Card.Root>
   );
 }

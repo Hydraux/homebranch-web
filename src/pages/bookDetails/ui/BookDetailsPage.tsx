@@ -46,14 +46,15 @@ export default function BookDetailsPage({book}: BookDetailsPageProps) {
             alt={book.title}
             w={"200px"}
           />
-          <HStack mt={2} justify={"space-between"}>
+          <HStack mt={2}>
             <DeleteConfirmationDialog
               title={`Delete book: ${book.title}`}
               action={`/delete-book/${book.id}`}
             />
-            <IconButton variant={"subtle"}>
+            {/*TODO: Implement edit book functionality */}
+            {/* <IconButton variant={"subtle"}>
               <HiPencil />
-            </IconButton>
+            </IconButton> */}
             <IconButton variant={"subtle"} onClick={favoriteHandler}>
               <HiHeart color={isFavorited ? "red" : undefined}/>
             </IconButton>
