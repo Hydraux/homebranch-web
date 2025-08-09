@@ -1,5 +1,5 @@
 import { DeleteConfirmationDialog } from "@/components/ui/modals/DeleteConfirmationDialog";
-import type { BookModel } from "@/entities/book";
+import { updateBook, type BookModel } from "@/entities/book";
 import { config } from "@/shared";
 import {
   Box,
@@ -10,6 +10,7 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { HiPencil, HiHeart, HiBookOpen } from "react-icons/hi";
 import { Link } from "react-router";
 
@@ -19,6 +20,20 @@ export interface BookDetailsPageProps {
 }
 
 export default function BookDetailsPage({book}: BookDetailsPageProps) {
+  const [isFavorited, setIsFavorited] = useState(book.isFavorited);
+
+  const favoriteHandler = async () => {
+    try {
+      setIsFavorited(!isFavorited);
+      const updatedBook = await updateBook(book.id, {
+        isFavorited: !isFavorited,
+      });
+      setIsFavorited(updatedBook.isFavorited);
+    } catch (error) {
+      console.error("Failed to update book:", error);
+    }
+  };
+  
   return (
     <>
     <Box p={4}>
@@ -39,8 +54,8 @@ export default function BookDetailsPage({book}: BookDetailsPageProps) {
             <IconButton variant={"subtle"}>
               <HiPencil />
             </IconButton>
-            <IconButton variant={"subtle"}>
-              <HiHeart />
+            <IconButton variant={"subtle"} onClick={favoriteHandler}>
+              <HiHeart color={isFavorited ? "red" : undefined}/>
             </IconButton>
             <IconButton variant={"subtle"} asChild>
               <Link to={`/books/${book.id}/read`}>
