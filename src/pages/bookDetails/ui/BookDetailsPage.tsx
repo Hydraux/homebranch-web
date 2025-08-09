@@ -37,6 +37,7 @@ export default function BookDetailsPage({ book }: BookDetailsPageProps) {
       setIsFavorited(updatedBook.isFavorited);
     } catch (error) {
       console.error("Failed to update book:", error);
+      setIsFavorited(!isFavorited); // Revert state on error
     }
   };
 
